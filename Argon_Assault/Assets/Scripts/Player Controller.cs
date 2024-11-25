@@ -9,6 +9,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float yRange = 7f;
     void Update()
     {
+        ProcessTranslation();
+        ProcessRotation();
+    }
+
+    void ProcessRotation()
+    {
+        transform.localRotation = Quaternion.Euler(-30f, 30f, 0f);
+    }
+
+    private void ProcessTranslation()
+    {
         float xThrow = Input.GetAxis("Horizontal");
         float yThrow = Input.GetAxis("Vertical");
 
